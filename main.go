@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"logship/provider"
+	"terraform-provider-logship/provider"
 )
 
 func main() {
