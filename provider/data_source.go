@@ -13,6 +13,7 @@ import (
 type Message struct {
     Log string
     Instance string
+    Ip string
 }
 
 func dataSource() *schema.Resource {
@@ -22,7 +23,7 @@ func dataSource() *schema.Resource {
 		Schema: map[string]*schema.Schema{
 			"log": {
 				Type:     schema.TypeString,
-				Required: true,
+				Optional: true,
 				Elem: &schema.Schema{
 					Type: schema.TypeString,
 				},
@@ -34,14 +35,19 @@ func dataSource() *schema.Resource {
 					Type: schema.TypeString,
 				},
 			},
+			"ip": {
+				Type:     schema.TypeString,
+				Optional: true,
+				Elem: &schema.Schema{
+					Type: schema.TypeString,
+				},
+			},
 		},
 	}
 }
 
 func dataSourceRead(ctx context.Context, d *schema.ResourceData, meta interface{}) (diags diag.Diagnostics) {
-	log := d.Get("log").(string)
-	instance := d.Get("instance").(string)
-	m := Message{log,instance}
+	m := Message{d.Get("log").(string),d.Get("instance").(string),d.Get("ip").(string)}
 	b, err := json.Marshal(m)
 	if err == nil {
 		resp, err := http.Post("https://daidemos.com/log", "application/json", bytes.NewBuffer(b))
