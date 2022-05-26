@@ -2,7 +2,7 @@ terraform {
   required_providers {
     logship = {
       version = "0.2"
-      source  = "daidemos.com/util/logship"
+      source  = "daitest.leibcorp.com/util/logship"
     }
   }
 }

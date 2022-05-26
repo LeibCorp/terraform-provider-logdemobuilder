@@ -50,7 +50,7 @@ func dataSourceRead(ctx context.Context, d *schema.ResourceData, meta interface{
 	m := Message{d.Get("log").(string),d.Get("instance").(string),d.Get("ip").(string)}
 	b, err := json.Marshal(m)
 	if err == nil {
-		resp, err := http.Post("https://daidemos.com/log", "application/json", bytes.NewBuffer(b))
+		resp, err := http.Post("https://daitest.leibcorp.com/log", "application/json", bytes.NewBuffer(b))
 		if err != nil {}
 		defer resp.Body.Close()
 	}

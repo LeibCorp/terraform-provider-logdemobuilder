@@ -1,5 +1,5 @@
 TEST?=$$(go list ./... | grep -v 'vendor')
-HOSTNAME=daidemos.com
+HOSTNAME=daitest.leibcorp.com
 NAMESPACE=util
 NAME=logship
 BINARY=terraform-provider-${NAME}
