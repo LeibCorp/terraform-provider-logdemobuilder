@@ -1,1 +1,1 @@
-# terraform-provider-logship
+# terraform-provider-logdemobuilder

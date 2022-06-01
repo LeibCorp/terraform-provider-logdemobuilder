@@ -1,7 +1,7 @@
 TEST?=$$(go list ./... | grep -v 'vendor')
 HOSTNAME=daitest.leibcorp.com
 NAMESPACE=util
-NAME=logship
+NAME=logdemobuilder
 BINARY=terraform-provider-${NAME}
 VERSION=0.2
 OS_ARCH=linux_amd64

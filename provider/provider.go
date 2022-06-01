@@ -9,7 +9,7 @@ func New() *schema.Provider {
 		Schema: map[string]*schema.Schema{},
 
 		DataSourcesMap: map[string]*schema.Resource{
-			"logship": dataSource(),
+			"logdemobuilder": dataSource(),
 		},
 
 		ResourcesMap: map[string]*schema.Resource{},
