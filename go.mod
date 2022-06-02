@@ -1,4 +1,4 @@
-module terraform-provider-logship
+module terraform-provider-logdemobuilder
 
 go 1.17
 
