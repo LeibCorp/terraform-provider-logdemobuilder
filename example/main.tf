@@ -1,13 +1,13 @@
 terraform {
   required_providers {
-    logship = {
+    logdemobuilder = {
       version = "0.2"
-      source  = "daitest.leibcorp.com/util/logship"
+      source  = "daitest.leibcorp.com/util/logdemobuilder"
     }
   }
 }
 
-provider "logship" {}
+provider "logdemobuilder" {}
 
 variable "log" {
   type    = string
@@ -18,7 +18,7 @@ variable "instance" {
   default = ""
 }
 
-data "logship" "psl" {
+data "logdemobuilder" "psl" {
   log = "my test log"
   instance = "my instance"
 }
